@@ -1,0 +1,165 @@
+@use "../globals/mq" as *;
+@use "./fonts";
+
+.header {
+  position: relative;
+  height: 200px;
+  background-color: rgba(158, 214, 230, 0.275);
+
+  @include mq("md") {
+    height: 300px;
+    margin-bottom: 3em;
+  }
+  
+  &__main {
+    height: 100%;
+    color: green;
+
+    &::before  {
+      content: "";
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      background-color: white;
+      border-radius: 50%; /* 両端の角丸 */
+      left: 50%;
+      transform: translate(-50%, -50%);
+      top: 50%;
+
+      @include mq("md") {
+        width: 600px;
+        height: 650px;
+      }
+    }
+
+    &__hero {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 1em 3em;
+      background-color: white;
+      z-index: 99;
+      border: 1px solid green;
+
+      @include mq("md") {
+        padding: 3em 0;
+      }
+
+      &__title {
+        @extend .font-28-40;
+        width: 200px;
+
+        @include mq("md") {
+          width: 320px;
+        }
+      }
+
+      &__hr {
+        width: 50px;
+        margin: 1em;
+        background-color: green;
+      }
+
+      &__text {
+        @extend .font-10-14;
+      }
+    }
+
+  }
+
+  &__about {
+    &__info {
+      position: absolute;
+      bottom: -30%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+    }
+  }
+
+  &__tel {
+    position: fixed;
+    right: 10px;
+    bottom: 5em;
+    background-color: rgba(#fff,1);
+    display: flex;
+    width: 200px;
+    height: 50px;
+    padding: 5px;
+    z-index: 99;
+    border-radius: 10px;
+    box-shadow: 6px 6px 10px 0px rgba(0, 0, 0, 0.4);
+
+    @include mq("md") {
+      position: fixed;
+      top: 2em;
+      background-color: rgba(#fff,1);
+      display: flex;
+      width: 200px;
+      padding: 5px;
+      z-index: 99;
+    }
+
+    &__icon {
+      width: 30px;
+      margin:  2px 10px;
+    }
+
+    &__business__hours {
+      font-size: 0.8em;
+    }
+  }
+
+  &__info {
+    position: absolute;
+    bottom: -70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+
+  &__logo {
+    display: none;
+
+    @include mq("lg") {
+      display: block;
+      text-align: center;
+    }
+    
+
+    &__image {
+      width: 5em;
+      height: 5em;
+      margin: 0 auto;
+    }
+  }
+
+  &__nav {
+    display: none;
+
+    @include mq("lg") {
+      display: flex;
+  
+      & li {
+        margin: 0 2em;
+        text-align: center;
+      }
+  
+      & span {
+        font-size: 0.5em;
+      }
+  
+      & hr {
+        transform: rotate(45deg);
+      }
+    }
+  }
+}
+

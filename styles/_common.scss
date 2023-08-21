@@ -1,0 +1,392 @@
+@use "./parts/fonts";
+@use "./globals/mq" as *;
+
+#global-container {
+  background-image: url("/img/common/bg-sp.png")
+}
+
+.section-hr {
+  @extend .font-30-100;
+  margin-bottom: 0.7em;
+  border: 0;
+  overflow-x: hidden;
+
+  @include mq("md") {
+    margin-bottom: 1em;
+  }
+}
+
+#page-container {
+  max-width: 880px;
+  margin: 2em auto 2em auto;
+  width: 100%;
+
+  @include mq("md") {
+    margin: 8em auto 2em auto;
+  }
+}
+
+.page__inner {
+  width: 95%;
+  margin: 0 auto;
+}
+
+body {
+  font-family: 'Kameron', serif;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  
+    &:hover {
+      opacity: 0.5;
+      transition: all 0.2s ease;
+
+  }
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  padding: 1em 2em;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+iframe {
+  height: 220px;
+  width: 100%;
+  margin-bottom: 1em;
+}
+
+
+
+ul {
+    & li {
+      margin: 0 2em;
+      text-align: center;
+      display: flex;
+      align-items: center;
+    }
+
+    & span {
+      font-size: 0.5em;
+    }
+
+    & hr {
+      transform: rotate(45deg);
+    }
+  }
+
+  table {
+    border-collapse: collapse; 
+    border: 1px solid #ccc; 
+    width: 100%;
+    text-align: center;
+  }
+  
+  th, td {
+    border: 1px solid #ccc; 
+    padding: 8px;
+  }
+  
+
+  .consultation {
+    &__title {
+      padding-left: 20px;
+      position: relative;
+      @extend .font-14-20;
+      &::before {
+        content: "";
+        display: block;
+        width: 5px;
+        height: 31px;
+        background-color: green;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    }
+  }
+
+.section {
+  display: flex;
+  margin-bottom: 1em;
+  &__border {
+    border-bottom: 1px solid #ccc;
+    width: 70px;
+    margin-right: 10px;
+    height: 2.8em;
+    margin-top: 0;
+
+    @include mq("lg") {
+      width: 150px;
+      margin-right: 30px;
+      height: 4em;
+    }
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 220px;
+
+    @include mq("lg") {
+      width: 350px;
+      margin-right: 2em;
+    }
+  }
+
+  &__hr {
+    transform: rotate(-45deg);
+    height: 30px;
+  }
+
+  &__title {
+    @extend .font-36-65;
+  }
+}
+
+dl {
+  display: flex;
+  padding: 1em 1.5em;
+  width: 100%;
+}
+
+dt {
+  width: 100%;
+
+  @include mq("md") {
+    width: 30%;
+  }
+}
+
+dd {
+  width: 100%;
+
+  @include mq("md") {
+    width: 70%;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.active {
+  background-color: aquamarine;
+}
+
+.common__nav {
+  display: none;
+  color: #179591;
+
+  @include mq("lg") {
+    display: flex;
+
+    & li {
+      margin: 0 2em;
+      text-align: center;
+    }
+
+    & span {
+      font-size: 0.5em;
+      color: black;
+    }
+
+    & hr {
+      transform: rotate(45deg);
+    }
+  }
+}
+
+.hover-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.common {
+  margin-top: 4em;
+  &__image {
+    margin-bottom: 3em;
+  }
+
+  &__title {
+    @extend .font-14-18;
+    color: #179591;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 0.3em;
+    position: relative;
+    margin-bottom: 2em;
+
+    &::before {
+      content: "";
+      position: absolute;
+      background-color: #179591;
+      width: 4.5em;
+      height: 2px;
+      bottom: -2px;
+      left: 0;
+    }
+  }
+
+  &__text {
+    line-height: 2;
+    margin-bottom: 3em;
+    &__top {
+      margin-bottom: 2em;
+    }
+  }
+
+  &__case {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 42px;
+
+    @include mq("md") {
+      gap: 50px;
+    }
+    
+
+    &__inner {
+      max-width: 230px;
+      width: 45%;
+
+    @include mq("md") {
+      width: 100%;
+      max-width: 230px;
+    }
+
+    }
+
+    &__image {
+      margin: 1em 0;
+    }
+
+    &__text {
+      font-size: 0.9em;
+    }
+  }
+}
+
+
+.content {
+  &__section {
+    &__title {
+      background-color: rgba(181, 218, 255, 0.3);
+      padding: 0.5em 0;
+      position: relative;
+      color: #179591;
+      padding-left: 30px;
+      margin-bottom: 3em;
+
+      &::before {
+        content: "";
+        position: absolute;
+        width: 8px;
+        height: 40px;
+        background-color: #179591;
+        top: 13%;
+        left: 0;
+      }
+    }
+  }
+}
+
+.info {
+  width: 100%;
+  margin: 4em 0;
+
+  &__area {
+    margin: 0 auto;
+    max-width: 850px;
+    width: 90%;
+
+    @include mq("lg") {
+      width: 100%;
+    }
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @include mq("lg") {
+      flex-direction: row;
+    }
+    
+  }
+
+  &__consultation {
+    width: 100%;
+
+      @include mq("lg") {
+        width: 45%;
+      }
+    &__hour {
+      margin: 1.5em 0;
+      @extend .font-12-14;
+    }
+
+    &__lest {
+      margin-top: 10px;
+    }
+
+    &__logo {
+      display: flex;
+      align-items: center;
+      margin-bottom: 2em;
+
+      & img {
+        width: 50px;
+      }
+
+      & h3 {
+        @extend .font-14-20;
+        margin-left: 1em;
+      }
+    }
+  }
+  &__tel {
+    display: flex;
+    width: 100%;
+    margin-bottom: 2em;
+
+    @include mq("lg") {
+      margin-bottom: 0;
+    }
+    & img {
+      width: 40px;
+    }
+
+    &__number {
+      @extend .font-28-32;
+    }
+  }
+
+  &__map {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    width: 100%;
+
+    @include mq("lg") {
+      width: 45%;
+    }
+
+    &__btn {
+      display: flex;
+    justify-content: end;
+    margin-top: 2em;
+    }
+  }
+}

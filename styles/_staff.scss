@@ -1,0 +1,151 @@
+@use "./parts/fonts";
+@use "./parts/menu";
+@use "./parts/header";
+@use "./parts/footer";
+@use "./common";
+@use "./globals/mq" as *;
+
+.smallText {
+  color: #179591;
+  font-weight: 700;
+  @extend .font-12-14;
+  margin-bottom: 0.5em
+}
+
+.introduction {
+
+  &__title {
+    @extend .font-14-22;
+    padding-bottom: 0.8em;
+    position: relative;
+    margin-bottom: 1.8em;
+    display: flex;
+    align-items: flex-end;
+    font-weight: 700;
+
+    &::before {
+      content: "";
+      position: absolute;
+      background-color: #179591;
+      width: 100%;
+      height: 2px;
+      bottom: -2px;
+      left: 0;
+
+      @include mq("md") {
+        bottom: -2px;
+        left: -4em;
+        width: 20em;
+        height: 2px;
+      }
+    }
+  }
+
+  &__subtitle {
+    @extend .font-12-14;
+    margin-left: 2em;
+  }
+
+  &__text {
+    line-height: 1.8;
+    margin-bottom: 3em;
+    &__top {
+      margin-bottom: 1.8em;
+    }
+  }
+
+  &__left {
+    width: 100%;
+    margin-right: 2.3em;
+    margin-bottom: 1em;
+    display: flex;
+    justify-content: center;
+
+    @include mq("md") {
+      width: 38%;
+      margin-bottom: 0;
+    }
+  }
+
+  &__right {
+    width: 100%;
+    margin-bottom: 1em;
+
+    @include mq("md") {
+      width: 61%;
+      margin-bottom: 0;
+    }
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 95%;
+    margin: 0 auto 2em 0;
+
+    @include mq("md") {
+      flex-direction: row;
+      width: 100%;
+    }
+  }
+}
+
+.list {
+  padding: 0;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 63px;
+  margin-bottom: 1em;
+
+  &__contents {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: normal;
+    text-align: left;
+
+    @include mq("md") {
+      width: 46%;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: -12px;
+      left: -52px;
+      transform: rotate(-45deg);
+      border-left: 80px solid transparent;
+      border-right: 80px solid transparent;
+      border-bottom: 80px solid rgba(0, 150, 150, 0.1); /* 赤色 */
+    }
+
+    &__top {
+      border-top: 2px solid #179591;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 2em;
+
+      &__left {
+        padding: 2em 1em;
+        text-align: left;
+      }
+
+      &__right {
+        display: flex;
+        align-items: end;
+      }
+    }
+  }
+
+  &__title {
+    @extend .font-14-18;
+  }
+
+  &__text {
+    line-height: 2;
+    padding:  0 1em;
+  }
+}

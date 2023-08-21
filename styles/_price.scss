@@ -1,0 +1,32 @@
+@use "./parts/fonts";
+@use "./parts/menu";
+@use "./parts/header";
+@use "./parts/footer";
+@use "./common";
+@use "./globals/mq" as *;
+
+.medical {
+  width: 100%;
+  margin-bottom: 3em;
+
+  & th {
+    padding: 1em;
+  }
+
+  & td {
+    padding: 1em;
+  }
+}
+
+.td-center {
+  text-align: center;
+}
+
+.td-left {
+  text-align: left;
+}
+
+.price-hr {
+  margin-bottom: 2em;
+  border: 0;
+}

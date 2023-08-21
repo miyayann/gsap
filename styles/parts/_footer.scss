@@ -1,0 +1,41 @@
+@use "../globals/mq" as *;
+@use "./fonts";
+
+
+.footer {
+  border-top: 1px solid green;
+
+  &__inner {
+    margin-top: 2em;
+  }
+
+
+  &__nav {
+    padding: 2em;
+    background-color: rgba(124, 217, 237, 0.2);
+  }
+
+  .common__nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 0;
+
+    & li {
+      margin: 0 1em;
+    }
+  }
+
+  .common__text {
+    @extend .font-14-16;
+  }
+
+  &__copyright {
+    display: flex;
+    justify-content: center;
+    color: white;
+    background-color: rgba(5, 100, 10, 0.5);
+    height: 50px;
+    align-items: center;
+  }
+}
